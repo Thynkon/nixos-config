@@ -6,6 +6,7 @@
 		packages = with pkgs; [
 			# SHELL
 			zsh
+			fzf
 		];
 	};
 }

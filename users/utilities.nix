@@ -17,6 +17,7 @@
 			fzf
 			htop
 			lsd
+			git
 			neofetch
 			peek
 			qbittorrent
@@ -27,6 +28,10 @@
 			vifm-full
 			xsel
 			zoxide
+
+			python3Full
+		python39Packages.pip
+		python39Packages.setuptools
 		];
 	};
 }

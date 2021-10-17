@@ -18,6 +18,7 @@
 		./email.nix
 		./text-editors.nix
 		./battery.nix
+		./development.nix
 	];
 
 	# Define a user account. Don't forget to set a password with ‘passwd’.
@@ -27,6 +28,7 @@
 		packages = with pkgs; [
 			virtualbox
 		];
+		shell = pkgs.zsh;
 	};
 
 	powerManagement.powertop.enable = true;

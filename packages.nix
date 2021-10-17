@@ -36,7 +36,6 @@
 		# fonts
 		cantarell-fonts
 		dejavu_fonts
-		fantasque-sans-mono
 		font-awesome
 		hack-font
 		hermit
@@ -50,5 +49,18 @@
 		terminus_font
 		ttf_bitstream_vera
 		ubuntu_font_family
+
+		python3Full
+		python39Packages.pip
+		python39Packages.setuptools
+
+		brightnessctl
+
+		# programming languages
+		php80
+		gcc
+		gnumake
+
+		killall
 	];
 }

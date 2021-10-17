@@ -7,7 +7,9 @@
 			# communication
 			element-desktop
 			tdesktop # telegram
+			discord
 			newsflash
+			teams
 		];
 	};
 }

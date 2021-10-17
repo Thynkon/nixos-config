@@ -14,6 +14,7 @@
 			gtk-engine-murrine
 			android-file-transfer # android file transfer
 			#lightdm
+			networkmanagerapplet
 			lxappearance
 			lxrandr
 			numlockx

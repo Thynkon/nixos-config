@@ -26,7 +26,8 @@
 			#vscode-html-languageserver
 
 			jetbrains.phpstorm
-			neovim
+			neovim-nightly
+			python39Packages.pynvim
 		];
 	};
 }
