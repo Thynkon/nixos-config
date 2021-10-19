@@ -28,7 +28,6 @@
 		curl
 		inetutils # hostname
 		iproute2
-		# SOMEHOW DOES NOT WORK => network-manager-applet
 		networkmanager
 		nmap
 		wget
@@ -57,10 +56,13 @@
 		brightnessctl
 
 		# programming languages
-		php80
 		gcc
 		gnumake
 
 		killall
+
+		php80
+		php80Extensions.xdebug
+		php80Packages.composer
 	];
 }

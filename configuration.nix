@@ -2,14 +2,14 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./packages.nix
-#	./unfree-packages.nix
+      ./unfree-packages.nix
       ./users/thynkon.nix
     ];
 
@@ -31,10 +31,6 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
   console.useXkbConfig = true;
-  #console = {
-  #  font = "Lat2-Terminus16";
-  #  keyMap = "us";
-  #};
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;

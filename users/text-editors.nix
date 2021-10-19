@@ -4,6 +4,7 @@
 	# Define a user account. Don't forget to set a password with ‘passwd’.
 	users.users.thynkon = {
 		packages = with pkgs; [
+			tree-sitter
 			## text editors
 			# lsp server
 			sumneko-lua-language-server
@@ -14,16 +15,16 @@
 			# lsp servers
 			#nodejs-intelephense
 			#sql-language-server
-			#vscode-json-languageserver
+			nodePackages.vscode-json-languageserver
 
 			# lsp servers
-			#bash-language-server
+			nodePackages.bash-language-server
 			gopls
 			python-language-server
 			rust-analyzer
 			texlab
-			#vscode-css-languageserver
-			#vscode-html-languageserver
+			nodePackages.vscode-css-languageserver-bin
+			nodePackages.vscode-html-languageserver-bin
 
 			jetbrains.phpstorm
 			neovim-nightly
