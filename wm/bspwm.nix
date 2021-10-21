@@ -19,5 +19,7 @@
 			defaultSession = "none+bspwm";
 		};
 	};
+
+	services.gnome.gnome-keyring.enable = true;
 }
 
