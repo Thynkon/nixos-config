@@ -7,7 +7,7 @@
                         gscan2pdf
                         libreoffice
                         #libreoffice-fr
-                        texlive.combined.scheme-basic
+                        #texlive.combined.scheme-basic
                         #texlive-fontsextra
                         #texlive-lang
                         #texlive-latexextra

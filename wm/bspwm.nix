@@ -16,7 +16,7 @@
 			lightdm = {
 				enable = true;
 			};
-			defaultSession = "none+bspwm";
+			#defaultSession = "none+bspwm";
 		};
 	};
 

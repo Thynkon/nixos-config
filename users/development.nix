@@ -20,6 +20,7 @@
 			nginx
 			ruby
 			rustup
+                        hugo
 		];
 	};
 }

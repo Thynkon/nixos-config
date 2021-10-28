@@ -5,38 +5,39 @@
 	users.users.thynkon = {
 		packages = with pkgs; [
 			# desktop environment
+			###lightdm-webkit-theme-aether
+			###sweet-cursor-theme
+			##candy-icons
+			#lightdm
+			#sweet-gtk-theme-dark
+			#thunar-archive-plugin
+			#xorg
 			alacritty
+			android-file-transfer # android file transfer
 			arandr
 			bspwm
 			dunst
 			feh
 			gnome.gnome_keyring
+			gnome.seahorse
 			gtk-engine-murrine
-			android-file-transfer # android file transfer
-			#lightdm
-			networkmanagerapplet
 			lxappearance
 			lxrandr
+			networkmanagerapplet
 			numlockx
 			picom
 			polkit_gnome
+			polybar
 			redshift
-			gnome.seahorse
-			#sweet-gtk-theme-dark
+			safeeyes
 			sxhkd
-			xfce.thunar
-			#thunar-archive-plugin
-			xfce.thunar-volman
 			wmname # fix java-based applications display problems
+			xfce.thunar
+			xfce.thunar-volman
 			xfce.xfce4-notifyd
 			xfce.xfce4-power-manager
 			xfce.xfce4-settings
-			#xorg
-			##candy-icons
-			###sweet-cursor-theme
-			###lightdm-webkit-theme-aether
-			polybar
-			safeeyes
+                        kitty
 		];
 	};
 }

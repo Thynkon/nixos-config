@@ -4,6 +4,7 @@
         imports =
                 [ # Include the results of the hardware scan.
                 ../wm/bspwm.nix
+                ../wm/awesome.nix
                 ./utilities.nix
                 ./multimedia.nix
                 ./printers.nix
