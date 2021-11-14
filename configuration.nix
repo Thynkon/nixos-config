@@ -5,21 +5,20 @@
 { config, pkgs, lib, ... }:
 
 {
-    imports =
-        [ # Include the results of the hardware scan.
+    imports = [ # Include the results of the hardware scan.
         ./hardware-configuration.nix
-            ./packages.nix
-            ./unfree-packages.nix
-            ./users/thynkon.nix
-        ];
-
+        ./packages.nix
+        ./unfree-packages.nix
+        ./users/thynkon.nix
+    ];
 
     boot.loader.systemd-boot.enable = true; # (for UEFI systems only)
 
     networking.hostName = "nixos"; # Define your hostname.
+    networking.extraHosts = ''192.168.1.117 filipe.local'';
 
     # Set your time zone.
-        time.timeZone = "Europe/Zurich";
+    time.timeZone = "Europe/Zurich";
 
     # The global useDHCP flag is deprecated, therefore explicitly set to false here.
     # Per-interface useDHCP will be mandatory in the future, so this generated config
@@ -56,7 +55,7 @@
     services.openssh.enable = true;
 
     fonts.fonts = with pkgs; [
-        (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "FantasqueSansMono" ]; })
+            (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "FantasqueSansMono" ]; })
     ];
 
     # SHELL
@@ -66,15 +65,15 @@
     services.blueman.enable = true;
 
     nix.gc = {
-        automatic = true;
-        dates = "weekly";
-        options = "--delete-older-than 14d";
+            automatic = true;
+            dates = "weekly";
+            options = "--delete-older-than 14d";
     };
 
     # Free up to 1GiB whenever there is less than 100MiB left
     nix.extraOptions = ''
-        min-free = ${toString (100 * 1024 * 1024)}
-        max-free = ${toString (1024 * 1024 * 1024)}
+            min-free = ${toString (100 * 1024 * 1024)}
+            max-free = ${toString (1024 * 1024 * 1024)}
     '';
 
     # Open ports in the firewall.

@@ -10,6 +10,7 @@
                 nix-index
 
                 unzip
+                p7zip
 
                 # utilities
                 #dconf-editor

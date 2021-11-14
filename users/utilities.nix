@@ -12,30 +12,30 @@
                         chezmoi
                         ctags
                         du-dust
+                        exiftool # remove metadata
                         fd
                         flameshot
                         fzf
-                        htop
-                        lsd
                         git
+                        htop
+                        ledger-live-desktop
+                        lsd
                         neofetch
                         peek
+                        python39Packages.grip # markdown viewer
+                        python39Packages.pip
+                        python39Packages.psutil
+                        python39Packages.setuptools
+                        python3Full
                         qbittorrent
                         ripgrep
                         rofi
                         sharutils
+                        usbutils
                         uudeview
                         vifm-full
                         xsel
                         zoxide
-
-                        ledger-live-desktop
-
-                        usbutils
-
-                        python3Full
-                        python39Packages.pip
-                        python39Packages.setuptools
                 ];
         };
 

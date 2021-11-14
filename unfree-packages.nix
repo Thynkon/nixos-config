@@ -8,5 +8,6 @@
         "discord"
         "phpstorm"
         "teams"
+        "staruml"
     ];
 }
