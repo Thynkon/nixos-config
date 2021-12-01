@@ -35,7 +35,9 @@
                 wget
 
                 # fonts
-                font-awesome
+                #font-awesome
+                font-awesome_5
+                comfortaa
                 cantarell-fonts
                 dejavu_fonts
                 font-awesome

@@ -15,7 +15,6 @@
     boot.loader.systemd-boot.enable = true; # (for UEFI systems only)
 
     networking.hostName = "nixos"; # Define your hostname.
-    networking.extraHosts = ''192.168.1.117 filipe.local'';
 
     # Set your time zone.
     time.timeZone = "Europe/Zurich";
@@ -75,6 +74,7 @@
             min-free = ${toString (100 * 1024 * 1024)}
             max-free = ${toString (1024 * 1024 * 1024)}
     '';
+
 
     # Open ports in the firewall.
     # networking.firewall.allowedTCPPorts = [ ... ];
