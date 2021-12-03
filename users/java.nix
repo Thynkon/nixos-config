@@ -5,8 +5,10 @@
 	users.users.thynkon = {
 		packages = with pkgs; [
 			android-studio
-			jdk11
+			jdk
 			maven
 		];
 	};
+
+        programs.java.enable = true;
 }
