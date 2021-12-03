@@ -9,4 +9,7 @@
 			playerctl
 		];
 	};
+
+        hardware.openrazer.enable = true;
+        users.users.thynkon.extraGroups = [ "plugdev" ];
 }
