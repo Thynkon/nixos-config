@@ -9,9 +9,9 @@
         ./hardware-configuration.nix
         ./packages.nix
         ./unfree-packages.nix
-        ./users/thynkon.nix
-#        ./machines/<machine-type>/main.nix
-        ./machines/laptop-lenovo/main.nix
+        ./users/thynkon
+#        ./machines/<machine-type>
+        ./machines/laptop-lenovo
     ];
 
     boot.loader.systemd-boot.enable = true; # (for UEFI systems only)

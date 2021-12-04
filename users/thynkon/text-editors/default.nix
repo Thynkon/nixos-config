@@ -24,6 +24,7 @@ in {
                         tree-sitter # syntax highlighter
                         unstable.joplin-desktop
                         unstable.neovim
+                        xournalpp
                         vscodium
                 ];
         };

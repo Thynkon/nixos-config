@@ -2,12 +2,7 @@
 
 {
         imports = [
-                ./c.nix
-                ./java.nix
-                ./javascript.nix
-                ./php.nix
-                ./python.nix
-                ./database.nix
+                ./programming_languages
         ];
 
         users.users.thynkon = {
@@ -19,7 +14,7 @@
                         jq
                         luarocks
                         nginx
-                        qmk # build ergodox ez firmware
+#                        qmk # build ergodox ez firmware
                         ruby
                         rustup
                         staruml

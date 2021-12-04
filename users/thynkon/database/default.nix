@@ -12,7 +12,7 @@ let
 			mariadb
 			mariadb-client
                         mongodb
-			mysql-workbench
+#			mysql-workbench
 		];
 	};
 
