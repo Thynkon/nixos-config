@@ -5,29 +5,30 @@
                 [ # Include the results of the hardware scan.
                 ../../wm/bspwm.nix
                 ../../wm/awesome.nix
-                ./utilities
-                ./multimedia
-                ./printers
-                ./desktop-environment
-                ./cloud
-                ./keyboard
-                ./network-discovery
-                ./documents
-                ./communication
-                ./browsers
-                ./sound
-                ./shells
-                ./email
-                ./text-editors
                 ./battery
+                ./browsers
+                ./cloud
+                ./communication
+                ./database
+                ./desktop-environment
                 ./development
+                ./documents
+                ./email
+                ./keyboard
+                ./multimedia
+                ./network-discovery
+                ./printers
+                ./shells
+                ./sound
+                ./text-editors
+                ./utilities
                 ./virtualization
         ];
 
         # Define a user account. Don't forget to set a password with ‘passwd’.
         users.users.thynkon = {
                 isNormalUser = true;
-                extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+                extraGroups = [ "wheel" "fuse" ]; # Enable ‘sudo’ for the user. and sshfs
                         shell = pkgs.zsh;
         };
 

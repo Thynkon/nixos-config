@@ -10,6 +10,7 @@
                         signal-desktop
                         tdesktop # telegram
                         teams
+                        protonmail-bridge
                 ];
         };
 }

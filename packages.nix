@@ -23,6 +23,7 @@
                 lsof
                 ntfs3g
                 tree
+                sshfs
                 udiskie
 
                 # network

@@ -2,6 +2,7 @@
 
 let
         unstable = import <nixos-unstable> {};
+        stable = import <nixos> {};
 
         in
 {
@@ -11,12 +12,18 @@ let
 			dbeaver
 			mariadb
 			mariadb-client
-                        mongodb
+                        sqlite
+#                        mongodb
 #			mysql-workbench
 		];
 	};
 
+
 	services.mysql.enable = true;
-	services.mongodb.enable = true;
+        services.mongodb = {
+                package = pkgs.mongodb;
+                enable = true;
+                dbpath = "/var/db/mongodb";
+        };
 	services.mysql.package = pkgs.mariadb;
 }

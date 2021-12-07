@@ -11,6 +11,7 @@ in {
                         #sql-language-server
                         cmake-language-server
                         gopls # go lsp server
+                        jetbrains.idea-ultimate
                         jetbrains.phpstorm
                         nodePackages.bash-language-server
                         nodePackages.vscode-css-languageserver-bin
@@ -24,8 +25,8 @@ in {
                         tree-sitter # syntax highlighter
                         unstable.joplin-desktop
                         unstable.neovim
-                        xournalpp
                         vscodium
+                        xournalpp
                 ];
         };
 }

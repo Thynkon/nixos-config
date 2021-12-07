@@ -1,6 +1,13 @@
 { config, pkgs, ... }:
 
 {
+	# Define a user account. Don't forget to set a password with ‘passwd’.
+	users.users.thynkon = {
+		packages = with pkgs; [
+                        vagrant
+		];
+	};
+
         virtualisation.libvirtd.enable = true;
         programs.dconf.enable = true;
         environment.systemPackages = with pkgs; [ virt-manager ];
