@@ -15,7 +15,7 @@
                         luarocks
                         nginx
 #                        qmk # build ergodox ez firmware
-                        ruby_3_0
+                        ruby
                         rustup
                         staruml
                 ];

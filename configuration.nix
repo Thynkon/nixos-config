@@ -14,7 +14,6 @@
     #        ./machines/<machine-type>
     ./machines/laptop-lenovo
   ];
-
   # update firmware
   services.fwupd.enable = true;
   hardware.mwProCapture.enable = true;
@@ -39,10 +38,6 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
 
@@ -58,6 +53,9 @@
 
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
+
+  # ssd optimization
+  services.fstrim.enable = true;
 
   nix.gc = {
     automatic = true;

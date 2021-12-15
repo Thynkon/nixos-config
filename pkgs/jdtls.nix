@@ -13,7 +13,7 @@ stdenv.mkDerivation rec {
     sourceRoot = ".";
 
     buildInputs = [
-        jdk16
+        jdk17
     ];
 
     nativeBuildInputs = [
@@ -67,7 +67,7 @@ launcher="$(ls $out/share/java/plugins/org.eclipse.equinox.launcher_* | sort -V 
 #     This can be overidden by specifying -configuration to the wrapper.
 #
 # Java options, such as -Xms and Xmx can be specified by setting JAVA_OPTS.
-makeWrapper ${jdk16}/bin/java $out/bin/jdt-language-server \
+makeWrapper ${jdk17}/bin/java $out/bin/jdt-language-server \
 --run "mkdir -p ${runtimePath}" \
 --run "install -Dm 1777 -t ${runtimePath}/config $out/share/config/*" \
 --add-flags "-Declipse.application=org.eclipse.jdt.ls.core.id1" \

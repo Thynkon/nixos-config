@@ -12,7 +12,9 @@ let
 			dbeaver
 			mariadb
 			mariadb-client
-                        sqlite
+      mongodb-tools
+      libbson # ruby 
+      sqlite
 #                        mongodb
 #			mysql-workbench
 		];

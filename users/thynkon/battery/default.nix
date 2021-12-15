@@ -24,7 +24,7 @@
       # Reference: https://linrunner.de/tlp/settings/processor.html
       extraConfig = ''
         START_CHARGE_THRESH_BAT0=75
-        STOP_CHARGE_THRESH_BAT0=80
+        STOP_CHARGE_THRESH_BAT0=100
 
         CPU_ENERGY_PERF_POLICY_ON_AC=performance
         CPU_ENERGY_PERF_POLICY_ON_BAT=balance_power

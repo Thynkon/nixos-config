@@ -5,8 +5,7 @@
         users.users.thynkon = {
                 packages = with pkgs; [
                         gscan2pdf
-                        libreoffice
-                        #libreoffice-fr
+                        libreoffice-fresh
                         #texlive.combined.scheme-basic
                         #texlive-fontsextra
                         #texlive-lang
