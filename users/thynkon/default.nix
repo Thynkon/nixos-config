@@ -5,7 +5,7 @@
     # Include the results of the hardware scan.
     ../../wm/bspwm.nix
     ../../wm/awesome.nix
-    ../../wm/xmonad.nix
+    # ../../wm/xmonad.nix
     ./battery
     ./browsers
     ./cloud

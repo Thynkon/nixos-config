@@ -15,16 +15,17 @@
   ];
 
   powerManagement.cpuFreqGovernor = "ondemand";
+  powerManagement.powertop.enable = true; # powertop auto tuning on startup
 
   services = {
     upower.enable = true;
-#    auto-cpufreq.enable = true;
+    #    auto-cpufreq.enable = true;
     tlp = {
       enable = true;
       # Reference: https://linrunner.de/tlp/settings/processor.html
       extraConfig = ''
-        START_CHARGE_THRESH_BAT0=75
-        STOP_CHARGE_THRESH_BAT0=100
+        START_CHARGE_THRESH_BAT0=85
+        STOP_CHARGE_THRESH_BAT0=90
 
         CPU_ENERGY_PERF_POLICY_ON_AC=performance
         CPU_ENERGY_PERF_POLICY_ON_BAT=balance_power
@@ -59,6 +60,8 @@
         NATACPI_ENABLE=1
         TPACPI_ENABLE=1
         TPSMAPI_ENABLE=1
+
+        USB_AUTOSUSPEND=1
       '';
     };
   };

@@ -1,85 +1,84 @@
 { pkgs, ... }:
 
 {
-        # List packages installed in system profile. To search, run:
-        # $ nix search wget
-        environment.systemPackages = with pkgs; [
-                vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-                wget
-                firefox
-                nix-index
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    wget
+    firefox
+    nix-index
 
-                unzip
-                p7zip
+    unzip
+    p7zip
 
-                # utilities
-                #dconf-editor
-                btrfs-progs
-                dmenu
-                dosfstools
-                e2fsprogs
-                exfat-utils
-                jq
-                lsof
-                ntfs3g
-                tree
-                sshfs
-                udiskie
+    # utilities
+    #dconf-editor
+    btrfs-progs
+    dmenu
+    dosfstools
+    e2fsprogs
+    exfat-utils
+    jq
+    lsof
+    ntfs3g
+    tree
+    sshfs
+    udiskie
 
-                # network
-                bind # nslookup
-                curl
-                inetutils # hostname
-                iproute2
-                networkmanager
-                nmap
-                wget
+    # network
+    bind # nslookup
+    curl
+    inetutils # hostname
+    iproute2
+    networkmanager
+    nmap
+    wget
 
-                # fonts
-                #font-awesome
-                font-awesome_5
-                comfortaa
-                cantarell-fonts
-                dejavu_fonts
-                font-awesome
-                hack-font
-                hermit
-                iosevka
-                liberation_ttf
-                meslo-lgs-nf
-                noto-fonts
-                roboto
-                roboto-mono
-                tamsyn
-                terminus_font
-                ttf_bitstream_vera
-                ubuntu_font_family
+    # fonts
+    #font-awesome
+    font-awesome_5
+    comfortaa
+    cantarell-fonts
+    dejavu_fonts
+    font-awesome
+    hack-font
+    hermit
+    iosevka
+    liberation_ttf
+    meslo-lgs-nf
+    noto-fonts
+    roboto
+    roboto-mono
+    tamsyn
+    terminus_font
+    ttf_bitstream_vera
+    ubuntu_font_family
 
-                python3Full
-                python39Packages.pip
-                python39Packages.setuptools
+    python3Full
+    python310Packages.pip
+    python310Packages.setuptools
 
-                brightnessctl
+    brightnessctl
 
-                # programming languages
-                gcc
-                gnumake
+    # programming languages
+    gcc
+    gnumake
 
-                killall
+    killall
 
-                php80
-                php80Extensions.xdebug
-                php80Packages.composer
+    php81
+    php81Extensions.xdebug
+    php81Packages.composer
 
-                patchelf
-        ];
+    patchelf
+  ];
 
-        nixpkgs.config.packageOverrides = pkgs: {
-                nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-                        inherit pkgs;
-                };
-        };
+  nixpkgs.config.packageOverrides = pkgs: {
+    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+      inherit pkgs;
+    };
+  };
 
-        nix.autoOptimiseStore = true;
-
+  nix.settings.auto-optimise-store = true;
 }

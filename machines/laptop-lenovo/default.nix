@@ -5,10 +5,10 @@
 { config, pkgs, lib, ... }:
 
 {
-    imports = [
-        <nixos-hardware/lenovo/thinkpad/x1/6th-gen>
-        ./network.nix
-        ./mouse.nix
-        ./security.nix
-    ];
+  imports = [
+    <nixos-hardware/lenovo/thinkpad/x1/6th-gen>
+    ./network.nix
+    ./mouse.nix
+    ./security.nix
+  ];
 }

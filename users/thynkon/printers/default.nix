@@ -11,7 +11,7 @@
 			#libcups
 			cups
 			ghostscript
-			gscan2pdf
+			# gscan2pdf
 			gutenprint
 			system-config-printer
 		];
