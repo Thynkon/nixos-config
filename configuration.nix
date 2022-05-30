@@ -19,17 +19,20 @@
   hardware.mwProCapture.enable = true;
 
   boot.loader.systemd-boot.enable = true; # (for UEFI systems only)
-
-  networking.hostName = "nixos"; # Define your hostname.
+  # increase memory so we can run multiple docker containers at once
+  boot.kernel.sysctl = { "vm.max_map_count" = 262144; };
 
   # Set your time zone.
   time.timeZone = "Europe/Zurich";
 
-  # The global useDHCP flag is deprecated, therefore explicitly set to false here.
-  # Per-interface useDHCP will be mandatory in the future, so this generated config
-  # replicates the default behaviour.
-  networking.useDHCP = false;
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "nixos"; # Define your hostname.
+    # The global useDHCP flag is deprecated, therefore explicitly set to false here.
+    # Per-interface useDHCP will be mandatory in the future, so this generated config
+    # replicates the default behaviour.
+    useDHCP = false;
+    networkmanager.enable = true;
+  };
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
