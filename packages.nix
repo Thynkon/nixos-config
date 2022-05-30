@@ -1,5 +1,8 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
+let
+  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+in
 {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -18,7 +21,7 @@
     dmenu
     dosfstools
     e2fsprogs
-    exfat-utils
+    exfat
     jq
     lsof
     ntfs3g
@@ -55,9 +58,9 @@
     ttf_bitstream_vera
     ubuntu_font_family
 
-    python3Full
-    python310Packages.pip
-    python310Packages.setuptools
+    unstable.python39Full
+    unstable.python39Packages.pip
+    unstable.python39Packages.setuptools
 
     brightnessctl
 
@@ -81,4 +84,7 @@
   };
 
   nix.settings.auto-optimise-store = true;
+
+  # sshfs mountpoint
+  programs.fuse.userAllowOther = true;
 }

@@ -38,7 +38,6 @@
       xfce.xfce4-notifyd
       xfce.xfce4-power-manager
       xfce.xfce4-settings
-      kitty
     ];
   };
 }

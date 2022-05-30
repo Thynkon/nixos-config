@@ -20,12 +20,15 @@ in
     ];
   };
 
-
-  services.mysql.enable = true;
-  services.mongodb = {
-    package = pkgs.mongodb;
-    enable = true;
-    dbpath = "/var/db/mongodb";
+  services = {
+    mongodb = {
+      package = pkgs.mongodb;
+      enable = true;
+      dbpath = "/var/db/mongodb";
+    };
+    mysql = {
+      enable = true;
+      package = pkgs.mariadb;
+    };
   };
-  services.mysql.package = pkgs.mariadb;
 }
