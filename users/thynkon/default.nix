@@ -17,7 +17,7 @@
     ./email
     ./keyboard
     ./multimedia
-    ./network-discovery
+    ./network
     ./printers
     ./shells
     ./sound
