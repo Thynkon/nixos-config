@@ -12,10 +12,8 @@
           xdebug.client_port=9003
         '';
       };
-      symfony = pkgs.symfony-cli;
     in
     [
       php
-      symfony
     ];
 }

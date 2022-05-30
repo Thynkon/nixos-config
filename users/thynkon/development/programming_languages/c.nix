@@ -4,6 +4,7 @@
   users.users.thynkon = {
     packages = with pkgs; [
       clang-tools # clangd
+      llvmPackages.libcxx
       cmake
       valgrind
       bintools-unwrapped # objdump
