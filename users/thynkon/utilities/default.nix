@@ -15,6 +15,7 @@ in
       chezmoi
       ctags
       direnv
+      drawio
       du-dust
       exiftool # remove metadata
       fd

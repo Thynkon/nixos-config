@@ -18,6 +18,7 @@
     ./keyboard
     ./multimedia
     ./network
+    ./packaging
     ./printers
     ./shells
     ./sound

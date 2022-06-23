@@ -2,12 +2,13 @@
 
 {
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "android-studio-stable"
+    "android-stable"
+    "burpsuite"
     "discord"
     "mwprocapture"
-    "phpstorm"
-    "staruml"
-    "symfony-cli"
+    "steam"
+    "steam-original"
+    "steam-runtime"
     "teams"
   ];
 }

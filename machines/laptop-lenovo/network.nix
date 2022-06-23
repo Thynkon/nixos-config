@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  networking.interfaces.wlp0s20f3.useDHCP = true;
-  networking.enableIPv6 = false;
+  networking = {
+    interfaces.wlp0s20f3.useDHCP = true;
+    enableIPv6 = false;
+  };
 }

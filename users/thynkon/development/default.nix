@@ -16,7 +16,6 @@
       nginx
       qmk # build ergodox ez firmware
       ruby_3_1
-      staruml
       zeal
     ];
   };

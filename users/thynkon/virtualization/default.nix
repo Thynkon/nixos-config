@@ -5,6 +5,7 @@
   users.users.thynkon = {
     packages = with pkgs; [
       vagrant
+      docker-compose
     ];
     extraGroups = [ "libvirtd" "docker" ];
   };
