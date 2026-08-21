@@ -9,14 +9,16 @@
     vscodium = {
       enable = true;
     };
-
   };
   home = {
+    sessionVariables = {
+      EDITOR = "nvim";
+      VISUAL = "nvim";
+    };
     packages = with pkgs; [
       rubyPackages.erb-formatter
       luarocks
       markdown-toc
-      neovim
       nixfmt
       prettier
       rubocop

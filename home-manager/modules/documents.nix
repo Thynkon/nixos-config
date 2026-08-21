@@ -16,6 +16,7 @@
       tectonic # latex
       typst
       xournalpp
+      zotero
     ];
   };
 }

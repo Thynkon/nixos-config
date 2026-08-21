@@ -21,12 +21,15 @@
     packages = with pkgs; [
       # erlang observer
       #wxwidgets
-      beamPackages.elixir
-      beamPackages.erlang
+      beam29Packages.elixir_1_20
+      beam29Packages.erlang
+      gitui
       hoppscotch
+      inotify-tools
       nodejs_26
       php
       php84Packages.composer
+      #pipx
       python313
       python313Packages.pip
       ruby_4_0

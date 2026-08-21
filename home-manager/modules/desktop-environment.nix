@@ -44,6 +44,23 @@
       require("config.hyprland")
     '';
   };
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
+    ];
+    config = {
+      hyprland = {
+        default = [
+          "hyprland"
+          "gtk"
+        ];
+        "org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
+      };
+    };
+  };
+
   gtk = {
     enable = true;
     theme = {
@@ -75,14 +92,13 @@
     source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.config/hypr/";
   };
   home.pointerCursor = {
+    enable = true;
     gtk.enable = true;
     x11.enable = true;
     package = pkgs.catppuccin-cursors.mochaBlue;
     name = "catppuccin-mocha-blue-cursors";
     size = 24;
   };
-
-  home.pointerCursor.enable = true;
 
   home = {
     packages = with pkgs; [
@@ -92,12 +108,15 @@
       grim
       hyprlock
       hyprpolkitagent
+      ledger-live-desktop
+      monero-gui
       libnotify # notify-send
       networkmanagerapplet
       nwg-displays
       pavucontrol
       super-productivity
       thunar
+      xfconf
     ];
   };
 
@@ -141,11 +160,11 @@
     };
   };
 
-  # xfconf = {
-  #   enable = true;
-  #   settings.thunar = {
-  #     "default-view" = "ThunarCompactView";
-  #     "last-view" = "ThunarCompactView";
-  #   };
-  # };
+  xfconf = {
+    enable = true;
+    settings.thunar = {
+      "default-view" = "ThunarCompactView";
+      "last-view" = "ThunarCompactView";
+    };
+  };
 }

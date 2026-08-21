@@ -12,6 +12,7 @@
     ./desktop-environment.nix
     ./fonts.nix
     ./input.nix
+    ./security.nix
     ./virtualization.nix
   ];
 

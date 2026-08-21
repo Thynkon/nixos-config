@@ -16,6 +16,7 @@
     ./devops.nix
     ./documents.nix
     ./email.nix
+    ./hacking.nix
     ./multimedia.nix
     ./network.nix
     ./text-editors.nix

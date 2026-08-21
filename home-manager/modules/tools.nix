@@ -26,9 +26,11 @@
 
   home = {
     packages = with pkgs; [
+      btop
       dust
       ghostscript
       hexyl
+      htop
       just
       lsof
       mermaid-cli
@@ -36,6 +38,8 @@
       tree
       wev
       wl-clipboard
+      rustdesk-flutter
     ];
   };
+
 }

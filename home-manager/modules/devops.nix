@@ -17,6 +17,8 @@
   home = {
     packages = with pkgs; [
       kubectl
+      kubernetes-helm-wrapped
+      kustomize
     ];
   };
 }

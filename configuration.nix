@@ -11,7 +11,7 @@
 
 {
   imports = [
-    ./hardware-configuration.nix # Include the results of the hardware scan.
+    ./hardware-configuration/laptop.nix
     ./modules
     ./users
     inputs.silentSDDM.nixosModules.default
@@ -34,7 +34,12 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    plugins = with pkgs; [
+      networkmanager-openconnect
+    ];
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Zurich";
@@ -78,11 +83,17 @@
   environment.systemPackages = with pkgs; [
     git
     home-manager
+    kernel-hardening-checker
     killall
+    neovim
     nmap
     vim
     wget
   ];
+  environment.variables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -92,10 +103,6 @@
   #   enableSSHSupport = true;
   # };
   programs.nix-ld.enable = true;
-  programs.vim = {
-    enable = true;
-    defaultEditor = true;
-  };
 
   # List services that you want to enable:
   # Needed for trash, mounting, and thumbnails
@@ -104,10 +111,9 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  #networking.firewall.allowedTCPPorts = [ ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -121,4 +127,17 @@
   services.tailscale = {
     enable = true;
   };
+
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
+    flake = "/home/thynkon/programming/nixos-config/"; # sets NH_OS_FLAKE variable for you
+  };
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
+  services.dbus.packages = [ pkgs.xfconf ];
 }
