@@ -6,6 +6,7 @@
   config,
   pkgs,
   inputs,
+  lib,
   ...
 }:
 
@@ -18,7 +19,9 @@
   ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  #boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.enable = false;
+  boot.loader.limine.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Use latest kernel.
@@ -61,6 +64,17 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  programs.system-config-printer.enable = true;
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+  services.printing.drivers = with pkgs; [
+    gutenprint
+    hplip
+    brlaser
+  ];
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
@@ -78,6 +92,19 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # secrets management
+  # disable fingerprint so gnome-keyring can be unlocked using the password
+  security.pam.services = {
+    login = {
+      enableGnomeKeyring = true;
+      fprintAuth = false;
+    };
+    sddm = {
+      enableGnomeKeyring = true;
+      fprintAuth = false;
+    };
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -89,6 +116,7 @@
     nmap
     vim
     wget
+    sbctl # secure-boot
   ];
   environment.variables = {
     EDITOR = "nvim";
@@ -140,4 +168,7 @@
   ];
 
   services.dbus.packages = [ pkgs.xfconf ];
+
+  zramSwap.enable = true;
+  nix.settings.cores = 4;
 }

@@ -1,4 +1,9 @@
-{ lib, pkgs, ... }:
+{
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 {
   services = {
     nextcloud-client = {
@@ -9,7 +14,7 @@
   home = {
     packages = with pkgs; [
       signal-desktop
-      telegram-desktop
+      inputs.nixpkgs-stable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.telegram-desktop
       webcord
     ];
   };

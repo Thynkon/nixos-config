@@ -26,7 +26,8 @@
       gitui
       hoppscotch
       inotify-tools
-      nodejs_26
+      #nodejs_26
+      nodejs
       php
       php84Packages.composer
       #pipx

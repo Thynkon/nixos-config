@@ -1,4 +1,4 @@
-{lib, pkgs, ...}:
+{ lib, pkgs, ... }:
 {
   services = {
     protonmail-bridge = {
@@ -6,9 +6,15 @@
     };
   };
   programs = {
-    thunderbird  = {
-      enable = true;
-    };
+    #thunderbird = {
+    #  enable = true;
+    #};
 
+  };
+
+  home = {
+    packages = with pkgs; [
+      protonmail-desktop
+    ];
   };
 }

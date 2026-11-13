@@ -103,19 +103,25 @@
   home = {
     packages = with pkgs; [
       anyrun
+      appimage-run
+      bitwarden-desktop
       brightnessctl
-      gcr # Provides org.gnome.keyring.SystemPrompter
+      ffmpeg
+      gcr_4 # Provides org.gnome.keyring.SystemPrompter
+      gnome-keyring
       grim
       hyprlock
       hyprpolkitagent
       ledger-live-desktop
-      monero-gui
       libnotify # notify-send
+      libsecret
+      monero-gui
       networkmanagerapplet
       nwg-displays
       pavucontrol
       super-productivity
       thunar
+      wf-recorder
       xfconf
     ];
   };
@@ -150,7 +156,8 @@
         # Whether to enable legacy (pre-xdg-desktop-portal) screenshotting on X11
         useX11LegacyScreenshot = true;
         # Whether to skip display selection prompt (X11-only)
-        captureActiveMonitor = true;
+        # captureActiveMonitor = true;
+        captureActiveMonitor = false;
 
         # Color Customization
         uiColor = "#740096";
@@ -167,4 +174,5 @@
       "last-view" = "ThunarCompactView";
     };
   };
+
 }

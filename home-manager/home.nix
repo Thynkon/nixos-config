@@ -28,9 +28,9 @@
           src = pkgs.fishPlugins.fzf-fish.src;
         }
       ];
-      interactiveShellInit = ''
-        source ${pkgs.nix-index}/etc/profile.d/command-not-found.fish
-      '';
+      # interactiveShellInit = ''
+      #   source ${pkgs.nix-index}/etc/profile.d/command-not-found.fish
+      # '';
     };
     kitty = {
       enable = true;
@@ -63,7 +63,6 @@
         "rust-analyzer"
       ])
       chezmoi
-      prismlauncher
     ];
 
     username = "thynkon";

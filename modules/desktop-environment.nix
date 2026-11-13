@@ -27,14 +27,5 @@
     theme = "default"; # ou "default", "ken", "silvia", "everforest", "catppuccin-mocha", etc.
   };
 
-#  xdg.mimeApps = {
-#    enable = true;
-#    defaultApplications = {
-#      "text/html" = "zen-twilight.desktop";
-#      "x-scheme-handler/http" = "zen-twilight.desktop";
-#      "x-scheme-handler/https" = "zen-twilight.desktop";
-#      "x-scheme-handler/about" = "zen-twilight.desktop";
-#      "x-scheme-handler/unknown" = "zen-twilight.desktop";
-#    };
-#  };
+  security.pam.services.sddm.enableGnomeKeyring = true;
 }

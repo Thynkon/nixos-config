@@ -10,13 +10,15 @@
   };
   home = {
     packages = with pkgs; [
+      #stirling-pdf
       hayagriva
-      libreoffice-fresh
+      libreoffice-stable
       pdfpc
+      poppler-utils # pdftotext
       tectonic # latex
       typst
       xournalpp
-      zotero
+      # zotero
     ];
   };
 }

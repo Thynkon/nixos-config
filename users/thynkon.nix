@@ -15,6 +15,7 @@
       "networkmanager"
       "wheel"
       "docker"
+      "docker-compose"
     ];
     packages = with pkgs; [
       #  thunderbird

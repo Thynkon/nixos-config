@@ -9,10 +9,13 @@
 
   virtualisation = {
     containers.enable = true;
-    podman = {
+    docker = {
       enable = true;
-      dockerCompat = true;
-      defaultNetwork.settings.dns_enabled = true; # Required for containers under podman-compose to be able to talk to each other.
+      #defaultNetwork.settings.dns_enabled = true; # Required for containers under podman-compose to be able to talk to each other.
+      rootless = {
+        enable = true;
+        setSocketVariable = true;
+      };
     };
   };
 
@@ -33,7 +36,7 @@
   users.users.thynkon = {
     extraGroups = [
       "libvirtd"
-      "podman"
+      "docker"
     ];
   };
 }

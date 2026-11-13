@@ -26,18 +26,42 @@
     };
 
   };
-  programs.chromium = {
+  # programs.chromium = {
+  #   enable = true;
+  #   package = pkgs.brave;
+  #   extensions = [
+  #     #   { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # ublock origin
+  #   ];
+  #   commandLineArgs = [
+  #     "--disable-features=WebRtcAllowInputVolumeAdjustment"
+  #   ];
+  # };
+
+  programs.librewolf = {
     enable = true;
-    package = pkgs.brave;
-    extensions = [
-      #   { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # ublock origin
-    ];
-    commandLineArgs = [
-      "--disable-features=WebRtcAllowInputVolumeAdjustment"
-    ];
+    # Enable WebGL, cookies and history
+    settings = {
+      "webgl.disabled" = false;
+      "privacy.resistFingerprinting" = false;
+      "privacy.clearOnShutdown.history" = false;
+      "privacy.clearOnShutdown.cookies" = false;
+      "network.cookie.lifetimePolicy" = 0;
+    };
   };
+
   home = {
     packages = with pkgs; [
     ];
+  };
+
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "text/html" = "zen-twilight.desktop";
+      "x-scheme-handler/http" = "zen-twilight.desktop";
+      "x-scheme-handler/https" = "zen-twilight.desktop";
+      "x-scheme-handler/about" = "zen-twilight.desktop";
+      "x-scheme-handler/unknown" = "zen-twilight.desktop";
+    };
   };
 }
