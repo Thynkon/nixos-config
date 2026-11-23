@@ -24,6 +24,9 @@
           };
         };
     };
+    # profiles.default.settings = {
+    #   "zen.urlbar.replace-newtab" = false;
+    # };
 
   };
   # programs.chromium = {
