@@ -7,42 +7,20 @@
   pkgs,
   inputs,
   lib,
+  hostname,
   ...
 }:
 
 {
   imports = [
-    ./hardware-configuration/laptop.nix
+    ./config/machines/${hostname}
     ./modules
     ./users
     inputs.silentSDDM.nixosModules.default
   ];
 
-  # Bootloader.
-  #boot.loader.systemd-boot.enable = true;
-  boot.loader.systemd-boot.enable = false;
-  boot.loader.limine.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  networking.hostName = "thinkpad-yoga-x1"; # Define your hostname.
-  networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
-
-  services.fwupd.enable = true;
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager = {
-    enable = true;
-    plugins = with pkgs; [
-      networkmanager-openconnect
-    ];
-  };
 
   # Set your time zone.
   time.timeZone = "Europe/Zurich";
@@ -62,19 +40,7 @@
     LC_TIME = "fr_CH.UTF-8";
   };
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-  programs.system-config-printer.enable = true;
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true;
-    openFirewall = true;
-  };
-  services.printing.drivers = with pkgs; [
-    gutenprint
-    hplip
-    brlaser
-  ];
+  services.fwupd.enable = true;
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
@@ -85,25 +51,11 @@
   services.libinput.enable = true;
 
   programs.fish.enable = true;
-
   # Install firefox.
   programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # secrets management
-  # disable fingerprint so gnome-keyring can be unlocked using the password
-  security.pam.services = {
-    login = {
-      enableGnomeKeyring = true;
-      fprintAuth = false;
-    };
-    sddm = {
-      enableGnomeKeyring = true;
-      fprintAuth = false;
-    };
-  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -132,16 +84,8 @@
   # };
   programs.nix-ld.enable = true;
 
-  # List services that you want to enable:
   # Needed for trash, mounting, and thumbnails
   services.gvfs.enable = true;
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  #networking.firewall.allowedTCPPorts = [ ];
-  # Or disable the firewall altogether.
-  networking.firewall.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -150,11 +94,6 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "26.05"; # Did you read the comment?
-
-  services.resolved.enable = true;
-  services.tailscale = {
-    enable = true;
-  };
 
   programs.nh = {
     enable = true;
@@ -168,7 +107,4 @@
   ];
 
   services.dbus.packages = [ pkgs.xfconf ];
-
-  zramSwap.enable = true;
-  nix.settings.cores = 4;
 }

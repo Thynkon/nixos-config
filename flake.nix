@@ -53,16 +53,23 @@
         "rustdesk"
         "libsciter"
       ];
+
+      hostNames = builtins.attrNames (
+        lib.filterAttrs (_: t: t == "directory") (builtins.readDir ./config/machines)
+      );
+      mkHost =
+        hostname:
+        nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs hostname; };
+          modules = [
+            ./configuration.nix
+            { networking.hostName = hostname; }
+          ];
+        };
     in
     {
-      nixosConfigurations.thinkpad-yoga-x1 = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./configuration.nix
-          silentSDDM.nixosModules.default
-        ];
-        specialArgs = { inherit inputs; };
-      };
+      nixosConfigurations = lib.genAttrs hostNames mkHost;
 
       homeConfigurations = {
         thynkon = home-manager.lib.homeManagerConfiguration {
