@@ -108,6 +108,7 @@
       brightnessctl
       ffmpeg
       gcr_4 # Provides org.gnome.keyring.SystemPrompter
+      ghostty
       gnome-keyring
       grim
       hyprlock
@@ -121,6 +122,7 @@
       pavucontrol
       super-productivity
       thunar
+      wezterm
       wf-recorder
       xfconf
     ];
