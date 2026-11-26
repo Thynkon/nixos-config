@@ -27,6 +27,7 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-mineral.url = "github:nix-community/nix-mineral/";
 
   };
 

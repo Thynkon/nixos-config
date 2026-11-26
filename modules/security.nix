@@ -6,6 +6,8 @@
 }:
 
 {
+  imports = [ inputs.nix-mineral.nixosModules.nix-mineral ];
+
   # secrets management
   # disable fingerprint so gnome-keyring can be unlocked using the password
   security.pam.services = {
@@ -27,4 +29,9 @@
 
   security.sudo.enable = false;
   security.sudo.execWheelOnly = true;
+
+  nix-mineral = {
+    enable = true;
+    preset = [ "compatibility" ];
+  };
 }

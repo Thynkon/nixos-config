@@ -21,7 +21,7 @@
   fileSystems."/home" =
     { device = "/dev/disk/by-uuid/e402c2ac-c9fa-4fd3-a305-f502a203cb4c";
       fsType = "btrfs";
-      options = [ "subvol=home" ];
+      options = lib.mkForce [ "subvol=home" "nodev" "nosuid" ];
     };
 
   fileSystems."/nix" =
